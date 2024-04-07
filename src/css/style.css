@@ -1,0 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+}
+
+html {
+  background: #181a1b;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  color: black;
+}
