@@ -8,9 +8,21 @@ export default class TicketForm {
     const formElement = document.createElement('form');
     formElement.id = 'ticket-form'
     formElement.innerHTML = `
-      <input type="text" name="name" placeholder="Name">
-      <textarea name="description" placeholder="Description"></textarea>
-      <button type="submit">Submit</button>
+      <h5 class="form-title">Добавить тикет</h5>
+      <div class="form-type">
+        <div class="form-type-block">
+          <label for="name">Краткое описание</label>
+          <textarea type="text" id="name" name="name"></textarea>
+        </div>
+        <div class="form-type-block">
+          <label for="description">Подробное описание</label>
+          <textarea id="description" name="description"></textarea>
+        </div>
+        <div class="form-btns">
+          <button class="form-btn" id="form-close">Отмена</button>
+          <button class="form-btn" type="submit">Ok</button>
+        </div>
+      </div>
     `;
     formElement.addEventListener('submit', event => {
       event.preventDefault();
@@ -24,5 +36,10 @@ export default class TicketForm {
       this.onSubmit(data);
     });
     this.container.appendChild(formElement);
+
+    const closeButton = formElement.querySelector('#form-close');
+    closeButton.addEventListener('click', () => {
+      formElement.remove();
+    });
   }
 }

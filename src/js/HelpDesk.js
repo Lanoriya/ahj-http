@@ -16,11 +16,11 @@ export default class HelpDesk {
       this.ticketView.renderTickets(tickets);
     });
     // Отображаем форму для создания нового тикета
-    this.ticketForm.renderForm();
-
     const addButton = document.getElementById('add-ticket-button');
     addButton.addEventListener('click', () => {
-      this.ticketForm.renderForm();
+      if (!document.getElementById('ticket-form')) {
+        this.ticketForm.renderForm();
+      }
     });
   }
 
@@ -32,5 +32,20 @@ export default class HelpDesk {
         this.ticketView.renderTickets(tickets);
       });
     });
+  }
+  
+  async handleDeleteTicket(id) {
+    this.ticketView.deleteTicket(id);
+  }
+
+  // Метод для обработки обновления тикета
+  async handleUpdateTicket(id, newData) {
+    this.ticketView.updateTicket(id, newData);
+  }
+
+  // Метод для обработки отметки о выполнении тикета
+  async handleToggleStatus(id, status) {
+    const newData = { status };
+    this.ticketView.updateTicket(id, newData);
   }
 }
