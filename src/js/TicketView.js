@@ -23,12 +23,20 @@ export default class TicketView {
     `;
     
     const deleteButton = ticketRow.querySelector('.delete-button');
-    deleteButton.addEventListener('click', () => {
+    deleteButton.addEventListener('click', (event) => {
+      event.stopPropagation(); // Предотвращает всплытие события
+      if (document.getElementById('ticket-form')) {
+        return;
+      }
       this.confirmDeleteTicket(ticket.id);
     });
 
     const updateButton = ticketRow.querySelector('.update-button');
-    updateButton.addEventListener('click', () => {
+    updateButton.addEventListener('click', (event) => {
+      event.stopPropagation(); // Предотвращает всплытие события
+      if (document.getElementById('ticket-form')) {
+        return;
+      }
       this.openEditModal(ticket.id, ticket.name, ticket.description);
     });
 
