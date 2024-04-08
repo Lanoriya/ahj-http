@@ -64,7 +64,7 @@ export default class TicketView {
       const newDescriptionRow = document.createElement('tr');
       newDescriptionRow.classList.add('ticket-description');
       const descriptionCell = document.createElement('td');
-      descriptionCell.setAttribute('colspan', '4');
+      descriptionCell.setAttribute('colspan', '2');
       descriptionCell.textContent = description;
       newDescriptionRow.appendChild(descriptionCell);
       ticketRow.after(newDescriptionRow);
