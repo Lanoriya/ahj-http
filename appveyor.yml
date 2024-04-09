@@ -9,6 +9,8 @@ branches:
 cache: node_modules  # кеширование
 
 install:
+  - git config --global user.email "mr_buzik@mail.ru"
+  - git config --global user.name "lanoriya"
   - npm install  # команда установки зависимостей
 
 build: off  # отключаем встроенную в appveyor систему сборки
