@@ -3,23 +3,18 @@ environment:
 
 branches:
   only:
-    - master  # ветка git
+    - master
     - main
 
-cache: node_modules  # кеширование
+cache: 
+  node_modules
 
 install:
-  - git config --global user.email "mr_buzik@mail.ru"
-  - git config --global user.name "lanoriya"
-  - npm install  # команда установки зависимостей
+  - git config --global credential.helper "store --file=.git/credentials"
+  - echo "https://lanoriya:${GH_TOKEN}@github.com" > .git/credentials
+  - npm install
 
-build: off  # отключаем встроенную в appveyor систему сборки
-
-build_script:
-  - npm run build   # команда сборки
-
-test_script:
-  - npm test  # скрипт тестирования
+build: off
 
 deploy_script:
   - npm install -g gh-pages
