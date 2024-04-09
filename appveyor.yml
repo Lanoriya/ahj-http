@@ -22,4 +22,6 @@ test_script:
   - npm test  # скрипт тестирования
 
 deploy_script:
-  - bash deploy.sh
+  - npm install -g gh-pages
+  - npm run build
+  - gh-pages -d dist
