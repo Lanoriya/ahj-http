@@ -1,7 +1,5 @@
 image: Ubuntu2004
 
-stack: node 10
-
 environment:
   nodejs_version: "18"
 
