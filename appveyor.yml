@@ -18,7 +18,6 @@ build: off
 
 deploy_script:
   - npm install -g gh-pages
-  - git config --global user.email "mr_buzik@mail.ru"
-  - git config --global user.name "lanoriya"
   - npm run build
+  - git remote set-url origin https://lanoriya:${GH_TOKEN}@github.com/Lanoriya/ahj-http.git
   - gh-pages -d dist
