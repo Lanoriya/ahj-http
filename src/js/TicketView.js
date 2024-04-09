@@ -23,8 +23,8 @@ export default class TicketView {
     `;
     
     const deleteButton = ticketRow.querySelector('.delete-button');
-    deleteButton.addEventListener('click', (event) => {
-      event.stopPropagation(); // Предотвращает всплытие события
+    deleteButton.addEventListener('click', (e) => {
+      e.stopPropagation();
       if (document.getElementById('ticket-form')) {
         return;
       }
@@ -32,8 +32,8 @@ export default class TicketView {
     });
 
     const updateButton = ticketRow.querySelector('.update-button');
-    updateButton.addEventListener('click', (event) => {
-      event.stopPropagation(); // Предотвращает всплытие события
+    updateButton.addEventListener('click', (e) => {
+      e.stopPropagation();
       if (document.getElementById('ticket-form')) {
         return;
       }
@@ -41,7 +41,8 @@ export default class TicketView {
     });
 
     const toggleStatusButton = ticketRow.querySelector('.toggle-status-button');
-    toggleStatusButton.addEventListener('click', () => {
+    toggleStatusButton.addEventListener('click', (e) => {
+      e.stopPropagation();
       const currentStatus = toggleStatusButton.dataset.status === 'true';
       const newStatus = !currentStatus;
       toggleStatusButton.dataset.status = newStatus.toString();
@@ -58,6 +59,7 @@ export default class TicketView {
 
   toggleTicketDescription(ticketRow, description) {
     const descriptionRow = ticketRow.nextElementSibling;
+
     if (descriptionRow && descriptionRow.classList.contains('ticket-description')) {
       descriptionRow.remove();
     } else {
