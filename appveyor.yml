@@ -18,5 +18,7 @@ build: off
 
 deploy_script:
   - npm install -g gh-pages
+  - git config --global user.email "mr_buzik@mail.ru"
+  - git config --global user.name "lanoriya"
   - npm run build
   - gh-pages -d dist
