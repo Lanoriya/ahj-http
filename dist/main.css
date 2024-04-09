@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+}
+
+html {
+  background: #181a1b;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#add-ticket-button {
+  padding: 8px;
+  width: 10em;
+  margin: 8px 8px 0px;
+  align-self: flex-end;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: #181a1b;
+}
+
+#ticket-list-container {
+  display: flex;
+  margin-top: 24px;
+  color: #fff;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ticket-item {
+  display: flex;
+  gap: 20px;
+  border: 1px solid #fff;
+}
+
+#ticket-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+table {
+  border-collapse: collapse; /* Объединение границ таблицы */
+}
+
+tbody {
+  border: 1px solid #fff;
+}
+
+tr td:first-child {
+  text-align: center;
+  padding-right: 8px;
+}
+
+tr td:last-child {
+  padding-left: 8px;
+}
+
+tbody tr {
+  border: 1px solid #fff;
+  border-bottom: none;
+}
+
+tbody td {
+  padding: 8px 0px;
+}
+
+#ticket-form {
+  position: fixed;
+  text-align: center;
+  width: 400px;
+  border-radius: 16px;
+  padding: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #181a1b;
+  border: 1px solid #fff;
+}
+
+.form-type {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-type-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-type-block textarea {
+  resize: none;
+}
+
+label {
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+#description {
+  height: 60px;
+}
+
+.form-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.form-btn {
+  background: #181a1b;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.modal-content {
+  color: #fff;
+}
+
+.form-confirm-p {
+  text-align: left;
+  margin: 16px 0px;
+}
+
+.ticket-description td {
+  padding: 16px 60px;
+  max-width: 0;
+  word-wrap: break-word;
+}
+
+.ticket-description {
+  border-top: none;
+}
