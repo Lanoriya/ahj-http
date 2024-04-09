@@ -17,11 +17,8 @@ install:
 build: off
 
 deploy_script:
-  - npm install -g gh-pages
-  - npm run build
-  - git config user.email "mr_buzik@mail.ru"
-  - git config user.name "lanoriya"
-  - git remote set-url origin https://github.com/Lanoriya/ahj-http.git
-  - git remote add origin https://lanoriya:${GH_TOKEN}@github.com/Lanoriya/ahj-http.git
-  - gh-pages -d dist
-
+  - git config --global credential.helper store
+  - git config --global user.name AppVeyor
+  - git config --global user.email ci@appveyor.com
+  - echo "https://$GH_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
